@@ -17,25 +17,11 @@ $objStmt = $objBanco->prepare('	INSERT INTO contatos
 $objStmt->bindParam(':nm', $_POST['nm']);					
 $objStmt->bindParam(':wzap', $_POST['whats']);	
 
-/*
-Outra forma de preparar e executar a consulta, usando ?
-no lugar de :label
-Quando passar o array em execute, a ordem dos elementos
-importa!
-
-$objStmt = $objBanco->prepare('	INSERT INTO contatos 
-									( nome, whatsapp)
-								VALUES 
-									( ?, ?)');
-
-$objStmt->execute( array( $_POST['nm'], $_POST['whats'])); 
-*/
-
 //Executo
 
 if ( $objStmt->execute() ) {
 
-	$msg = 'Obrigado por se cadastrar';
+	$msg = 'Contato gravado com sucesso!';
 
 } else {
 
@@ -43,5 +29,4 @@ if ( $objStmt->execute() ) {
 }
 
 //Chama o template (front-end)
-
 include 'grava_contato_tpl.php';

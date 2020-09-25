@@ -1,10 +1,11 @@
 <html>
-	<head></head>
+	<head>
+	</head>
 	<body>
 		<center>
 			<h1><?php echo $msg; ?></h1>
 			<br><br>
-			<a href="./">Voltar para o formulário</a>
+			<a href='lista_contato.php'>Voltar</a>
 		</center>
 	</body>
 </html>

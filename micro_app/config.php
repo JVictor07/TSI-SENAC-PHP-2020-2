@@ -1,10 +1,9 @@
 <?php
 
-//Explicando o DSN
-//driver:dbname=nome_do_db;host=host_do_db
-//driver no PDO para SQL Server é sqlsrv
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 define( 'DSN', 'mysql:dbname=cms;host=dockerhost'); // localhost na maioria dos PCs dos alunos
 define( 'DB_USER', 'cms');
 define( 'DB_PASS', 'cms');
-
