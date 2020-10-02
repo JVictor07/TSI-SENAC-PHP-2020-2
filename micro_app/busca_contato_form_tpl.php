@@ -6,13 +6,10 @@
 			<a href='lista_contato.php'>Editar</a> 
 			<a href='lista_contato.php'>Apagar</a> 
 			<a href='busca_contato.php'>Buscar</a><br><br>
-			<h1>Cadastre seu contato</h1>
 			<br><br>
-			<form method="post" action="grava_contato.php">
-				Nome: <input type="text" name="nm"> 
-				Whatsapp: <input type="text" name="whats">
-				<br><br>
-				<input type="submit" value="Gravar">
+			<form method="post" action="busca_contato.php">
+				Buscar <input type="text" name="argumento"> 
+				<input type="submit" value="Ir!">
 			</form>
 		</center>
 	</body>
