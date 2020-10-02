@@ -4,7 +4,7 @@
 	<body>
 		<center>
 			<br><br>
-			<a href="./">+ Novo contato</a>
+			<a href="./contato.html">+ Novo contato</a>
 			<br><br>
 			<table border="1" width="50%">
 				<tr>
