@@ -4,8 +4,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
+require 'sessao.php';
 
+include 'header_tpl.php';
+include 'index_menu_tpl.php';
 
 
 $nota = $_POST['nota'];
@@ -36,3 +38,5 @@ if ( $stmt->execute() ) {
 }
 
 echo '<br><br><a href="./agradecimento.php?nota=' . $nota . '">Seguir</a>';
+
+include 'footer_tpl.php';
