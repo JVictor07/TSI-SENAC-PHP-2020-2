@@ -1,3 +1,3 @@
-Aprendendo a utilizar o GIT
+# TSI-SENAC-PHP-2020-2
 
-Aula 2
+## A repository of PHP studies from Senac University
