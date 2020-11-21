@@ -20,7 +20,9 @@
 							<br><br>
 							<label for="password">Password</label>
 							<input type="password" id="password" name="password">
-							<br><br>
+							<br>
+							<a href="user/register.php">Cadastre-se</a>
+							<br>
 							<input type="submit" name="enter" value="Enter">
 						</form>	
 					</td>
