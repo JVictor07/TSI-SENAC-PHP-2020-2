@@ -7,14 +7,21 @@ echo '
   <br>
   <br>
   <br>
-  <center>
+  <center>';
+
+if ( isset($error) ) {
+  echo "<font color='red'>$error</font><br><br>"
+}
+
+echo '
   <table border="1" width="50%">
-    <tr>
-      <td>ID</td>
-      <td>Nome</td>
-      <td>E-mail</td>
-    </tr>
-';
+  <tr>
+    <td>ID</td>
+    <td>Nome</td>
+    <td>E-mail</td>
+    <td></td>
+    <td></td>
+  </tr>';
 
 foreach ($lista as $usuario) {
   echo '
@@ -22,6 +29,8 @@ foreach ($lista as $usuario) {
       <td>{$usuario['id']}</td>
       <td>{$usuario['nome']}</td>
       <td>{$usuario['email']}</td>
+      <td><a href="?delete={$usuario['id']}">Delete</a></td>
+      <td><a href="?editar={$usuario['id']}">Editar</a></td>
     </tr>
   '
 }

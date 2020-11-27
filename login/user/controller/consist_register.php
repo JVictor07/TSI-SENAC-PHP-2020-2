@@ -13,7 +13,7 @@ if( strlen($name) < 2) {
 
 if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
   $errors[] = 'Invalid e-mail';
-} elseif ( has_email($email) ) {
+} elseif ( has_email($email) && !isset($_POST['register']) ) {
   $errors[] = 'This e-mail is already in use';
 }
 
