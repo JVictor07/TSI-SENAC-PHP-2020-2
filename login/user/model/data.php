@@ -41,6 +41,29 @@ function has_email(string $email): bool {
   return is_numeric($register['id']) ? true : false;
 }
 
+function link_img_to_user ( int $id, string $image_name ):bool {
+  global $db;
+
+  $stmt = $db->prepare('UPDATE usuario SET foto = :foto WHERE id === :id');
+
+  $stmt->bindParam(':foto', $image_name);
+  $stmt->bindParam(':id', $id);
+
+  return $stmt->execute();
+}
+
+function get_user_image( int $id ): array {
+  global $db;
+
+  $stmt = $db->prepare('SELECT foto from usuario WHERE id === :id');
+
+  $stmt->bindParam(':id', $id);
+
+  $stmt->execute();
+
+  return $stmt->fetchAll();
+}
+
 function register_user( string $nome, string $email, string $senha ): ?int {
   global $db;
 

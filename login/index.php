@@ -7,8 +7,13 @@ error_reporting(E_ALL);
 session_start();
 
 require_once 'db.php';
+require_once 'user/model/data.php';
 
 if ( isset($_SESSION['login']) ) {
+
+		$photo_array = get_user_image( $_SESSION['id'] );
+
+		$photo = $photo_array[0]['foto'];
 
 		include 'header_tpl.php';
 		include 'index_menu_tpl.php';
@@ -19,13 +24,14 @@ if ( isset($_SESSION['login']) ) {
 	$login = filter_var( $_POST['login'], FILTER_SANITIZE_EMAIL);
 	$password = $_POST['password'];
 
-	$r = $db->query("SELECT password FROM usuario WHERE email = '$login'");
+	$r = $db->query("SELECT password, id FROM usuario WHERE email = '$login'");
 	$reg = $r->fetch(PDO::FETCH_ASSOC);
 	$hash = $reg['password'];
 
 	if ( password_verify( $password, $hash) ) {
 
 		$_SESSION['login'] = $login;
+		$_SESSION['id'] = $reg['id'];
 
 		include 'header_tpl.php';
 		include 'index_menu_tpl.php';

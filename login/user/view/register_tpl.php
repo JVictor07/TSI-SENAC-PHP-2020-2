@@ -8,14 +8,14 @@
 			<table border="1">
 				<tr>
 					<td>
-						<form method="post" action="register.php">
+						<form method="post" action="register.php" enctype='multipart/form-data'>
 							<br>
 							<?php
-							if ( count($errors) > 0 ) {
-                foreach ($errors as $error) {
-                  echo $error . '<br>';
-                }
-              }
+								if ( count($errors) > 0 ) {
+									foreach ($errors as $error) {
+										echo $error . '<br>';
+									}
+								}
 							?>
 							<br>
 							<br>
@@ -36,7 +36,11 @@
 							<input required type="password" id="confirm-pass" name="confirm-pass">
 							<br><br>
 
-							<a href="user/register.php">Cadastre-se</a>
+							<label for="photo">Add your photo</label>
+							<input required type="file" id="photo" name="photo">
+							<br><br>
+
+							<a href="user/register.php">Register</a>
 							<br>
 							<input required type="submit" name="enter" value="Enter">
 						</form>	
